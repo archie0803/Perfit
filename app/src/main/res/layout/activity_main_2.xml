@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+ >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Weight"
+        android:id="@+id/edit_weight"
+        android:textSize="20dp"
+        android:inputType="number"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#3de426" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:id="@+id/save"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fee31d"
+        android:background="#4895ed"
+        android:textSize="30sp" />
+
+    <!--  Chapati -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chapati"
+        android:id="@+id/chapati"
+        android:onClick="onCheckBoxClicked"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#1c25ac"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Noodle -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pot Noodle"
+        android:id="@+id/radionoodle"
+        android:onClick="onCheckBoxClicked"
+        android:layout_below="@id/chapati"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Crisps -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crisps"
+        android:id="@+id/radiocrisps"
+        android:onClick="onCheckBoxClicked"
+        android:layout_below="@id/radionoodle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Fruit Chat -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fruit chat"
+        android:id="@+id/fruitchat"
+        android:onClick="onCheckBoxClicked"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/radiocrisps"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- Oats -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oats"
+        android:id="@+id/radiocereal"
+        android:onClick="onCheckBoxClicked"
+        android:checked="false"
+        android:textColor="#FF1C25AC"
+        android:layout_below="@id/fruitchat"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Juice -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juice"
+        android:id="@+id/juice"
+        android:onClick="onCheckBoxClicked"
+        android:checked="false"
+        android:layout_alignRight="@id/chapati"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Toast -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        android:id="@+id/radiotoast"
+        android:onClick="onCheckBoxClicked"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/juice"
+        android:layout_alignRight="@+id/juice"
+        android:layout_alignEnd="@+id/juice" />
+
+    <!-- Milk -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Milk"
+        android:id="@+id/milk"
+        android:onClick="onCheckBoxClicked"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/tea"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <!-- Tea -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tea"
+        android:id="@+id/tea"
+        android:onClick="onCheckBoxClicked"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/radioporridge"
+        android:layout_alignRight="@+id/radiotoast"
+        android:layout_alignEnd="@+id/radiotoast" />
+
+
+    <!-- Porridge -->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Porridge"
+        android:id="@+id/radioporridge"
+        android:onClick="onCheckBoxClicked"
+        android:textColor="#FF1C25AC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/fruitchat"
+        android:layout_alignRight="@+id/juice"
+        android:layout_alignEnd="@+id/juice" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Meal Calories"
+        android:id="@+id/display"
+        android:onClick="display_calories"
+        android:layout_below="@id/edit_weight"
+        android:textColor="#fee31d"
+        android:background="#4895ed"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meal Calorie Total:"
+        android:id="@+id/cal_total"
+        android:layout_above="@id/save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:textColor="#e627d0"
+        android:textSize="30sp" />
+
+
+</RelativeLayout>

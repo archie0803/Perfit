@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+
+        android:layout_alignParentTop="true"
+        android:id="@+id/imgimg"
+        android:src="@drawable/modern1"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How to use"
+        android:id="@+id/textView"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/imgimg"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/scrollView"
+           android:layout_below="@id/textView">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="460dp"
+                   android:id="@+id/imageView"
+                   android:src="@drawable/howtouse"
+                   android:scaleType="centerCrop"/>
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="The app consists of the following broad categories:\n
+   1. Enter your profile.\n
+   2.  The heart rate can be measured once you place your finger near the camera.\n
+   3.  You can know the number of steps you have walked and the distance you have travelled.\n
+   4.  Know how much calories you have consumed by entering your meal.\n
+   5.  Get fit and relax by doing Yoga.\n
+   6.  Know your BMI and how much calories you need to burn to get the ideal value.\n
+   7.  Know about the app developers.\n
+   8.  We would be happy if you would rate us after exploring the app. "
+                   android:textSize="25sp"
+                   android:textColor="#0a26c5" />
+           </LinearLayout>
+       </ScrollView>
+
+</RelativeLayout>

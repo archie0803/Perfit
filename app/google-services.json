@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "337884699514",
+    "firebase_url": "https://hello-595eb.firebaseio.com",
+    "project_id": "hello-595eb",
+    "storage_bucket": "hello-595eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337884699514:android:379d18aeeca37a64",
+        "android_client_info": {
+          "package_name": "com.example.mac.infolab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337884699514-8q03r7lie0q44fiepblsbnijhbk6gmhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkKJ_4vZwepVPt7fvBJxMSq2GwoERXjDw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
