@@ -1,6 +1,7 @@
 package com.example.mac.infolab;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -8,6 +9,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.firebase.client.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity2 extends ActionBarActivity {
 
@@ -17,6 +27,13 @@ public class MainActivity2 extends ActionBarActivity {
     EditText weight;
     TextView calories;
     Button display, save;
+    public  static String FIREBASE_URL= "https://hello-595eb.firebaseio.com/";
+    private Cursor note;
+    private FirebaseAuth mFirebaseAuth;
+
+    private FirebaseUser mFirebaseUser;
+    private DatabaseReference mDatabase;
+    public static String mUserId;
 
 
 
@@ -100,6 +117,22 @@ public class MainActivity2 extends ActionBarActivity {
         int x =  Integer.parseInt(m);
         int y = x * sub_weight;
         calories.setText(y+"");
+        long msTime = System.currentTimeMillis();
+        Date curDateTime = new Date(msTime);
+        SimpleDateFormat formatter = new SimpleDateFormat("d'/'M'/'y");
+        String curDate = formatter.format(curDateTime);
+        firebasedata temp =  new firebasedata();
+        String km_run = ""+y;
+        temp.firebasedata2(km_run,curDate);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mUserId = mFirebaseUser.getUid();
+        Firebase.setAndroidContext(MainActivity2.this);
+        Firebase ref = new Firebase(FIREBASE_URL);
+        Firebase neft=  ref.child("users").child(mUserId);
+        neft.push().setValue(temp);
+
 
     }
 

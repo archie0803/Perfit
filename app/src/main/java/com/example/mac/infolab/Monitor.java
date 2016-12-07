@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
@@ -27,13 +28,15 @@ public class Monitor extends AppCompatActivity {
     public static ArrayList<firebasedata> RetrievedData;
     ArrayList<String>KeysForRetrievedData;
     TextView text;
+    ProgressBar p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.monitor_activity);
         text = (TextView)findViewById(R.id.s_text);
-
+        p=(ProgressBar)findViewById(R.id.progressBar1);
+        p.setVisibility(View.VISIBLE);
         Firebase.setAndroidContext(this);
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -54,11 +57,11 @@ public class Monitor extends AppCompatActivity {
                     String key=postSnapshot.getKey();
                     Log.e("key:  ",key);
                     firebasedata post = postSnapshot.getValue(firebasedata.class);
-                    text.setText(text.getText().toString().trim()+"\n"+"DATE :-"+post.getDate()+"\n"+"WEIGHT :-"+post.getWeight()+"\n"+"HEIGHT :-"+post.getheight());
+                    text.setText(text.getText().toString().trim()+"\n"+"DATE :-"+post.getDate()+"\n"+"WEIGHT :-"+post.getWeight()+"\n"+"HEIGHT :-"+post.getheight()+"\n"+"CALORIES :-"+post.getCalories()+"\n"+"KM RUN :-"+post.getkm());
                     RetrievedData.add(post);
                     KeysForRetrievedData.add(key);
                 }
-
+                   p.setVisibility(View.GONE);
             }
             @Override
             public void onCancelled(FirebaseError firebaseError) {

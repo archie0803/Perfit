@@ -1,6 +1,7 @@
 package com.example.mac.infolab;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -13,6 +14,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.firebase.client.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Archita on 12-07-2016.
@@ -36,6 +46,13 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
     private TextView textView5;
     private float x1, x2;
     static final int MIN_DISTANCE = 150;
+    public  static String FIREBASE_URL= "https://hello-595eb.firebaseio.com/";
+    private Cursor note;
+    private FirebaseAuth mFirebaseAuth;
+
+    private FirebaseUser mFirebaseUser;
+    private DatabaseReference mDatabase;
+    public static String mUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +115,21 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
                 textView2.setText("STEPS WALKED TODAY : " + a);
                 b = (a * 0.762) / 1000;
                 textView5.setText("TOTAL DISTANCE(km) : " + b);
+                long msTime = System.currentTimeMillis();
+                Date curDateTime = new Date(msTime);
+                SimpleDateFormat formatter = new SimpleDateFormat("d'/'M'/'y");
+                String curDate = formatter.format(curDateTime);
+                firebasedata temp =  new firebasedata();
+                String km_run = ""+b;
+                temp.firebasedata1(km_run,curDate);
+                mFirebaseAuth = FirebaseAuth.getInstance();
+                mFirebaseUser = mFirebaseAuth.getCurrentUser();
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+                mUserId = mFirebaseUser.getUid();
+                Firebase.setAndroidContext(FirstActivity.this);
+                Firebase ref = new Firebase(FIREBASE_URL);
+                Firebase neft=  ref.child("users").child(mUserId);
+                neft.push().setValue(temp);
 
 
             }

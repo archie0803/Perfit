@@ -2,15 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="412dp"
+        android:layout_height="587dp"
         android:id="@+id/s_view">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/s_text"/>
+
 
     </ScrollView>
 </LinearLayout>

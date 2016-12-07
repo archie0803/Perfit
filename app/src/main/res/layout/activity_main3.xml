@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/modern1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/scrollView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Surya Namaskar is a set of 12 postures, preferably to be done at the time of sunrise.The regular practice of Surya Namaskar improves circulation of blood throughout the body, maintains health, and helps one remain disease-free.There are numerous benefits of Surya Namaskar for the heart, liver, intestine, stomach, chest, throat, legs.
+              From head to toe, every part of the body is greatly benefitted by Surya Namaskar,
+             which is why it is highly recommended by all yoga experts."
+            android:id="@+id/textView4"
+            android:textSize="20sp"
+            />
+    </ScrollView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="78dp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Countdown"
+        android:textColor="#1565C0"
+        android:id="@+id/button"
+        android:layout_above="@+id/scrollView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="DESCRIPTION"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:background="#64B5F6"
+        android:textSize="30sp"
+        android:id="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

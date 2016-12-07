@@ -22,14 +22,14 @@ public class FourthActivity extends AppCompatActivity {
 
     {
         Button button = (Button) v;
-       // startActivity(new Intent(FourthActivity.this, Main8Activity.class));
+       startActivity(new Intent(FourthActivity.this, Main8Activity.class));
     }
 
     public void buttonOnClick1(View v)
 
     {
         Button button = (Button) v;
-        //startActivity(new Intent(FourthActivity.this, Main2Activity.class));
+        startActivity(new Intent(FourthActivity.this, Main2Activity.class));
     }
 
 }
